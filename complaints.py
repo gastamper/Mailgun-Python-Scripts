@@ -30,9 +30,8 @@ data=response.read()
 #De-JSONify the data we pulled
 unencoded = json.loads(data)
 
-buf = {}
-
 #Iterate over the data and make it into CSV format
+buf = {}
 for x in range(0, len(unencoded["items"])):
   struct = unencoded["items"][x]
   buf[struct["address"]] = struct["created_at"]
@@ -51,7 +50,6 @@ a.sort(key = lambda date: datetime.strptime(date, "%a, %d %b %Y %H:%M:%S %Z"))
 
 
 #Horrible unoptimized multiple loop that goes over the entire data set for every. single. date.
-#Also known as "why I do not do professional software development"
 
 iter = 0
 count = 0
