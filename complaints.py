@@ -4,7 +4,7 @@ import json
 import time
 
 #Configuration
-username='api'
+username='api access username'
 password='yourpassword'
 url="https://api.mailgun.net/v3/example.com/complaints?limit=10000"
 output = 'output.csv'
